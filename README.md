@@ -5,6 +5,8 @@
 
 Schema.org simplified types for Go.
 
+> **WARNING:** These schemas are suited for our internal use. They're not intended for public consumption and do not contain enough definitions to be useful for other companies.
+
 
 ## Install
 
