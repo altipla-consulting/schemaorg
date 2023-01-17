@@ -8,8 +8,10 @@ import (
 const (
 	Context = DescriptorContext("http://schema.org")
 
-	TypeNewsArticle    = DescriptorType("NewsArticle")
-	TypeBreadcrumbList = DescriptorType("BreadcrumbList")
+	TypeNewsArticle        = DescriptorType("NewsArticle")
+	TypeBreadcrumbList     = DescriptorType("BreadcrumbList")
+	TypeOpinionNewsArticle = DescriptorType("OpinionNewsArticle")
+	TypeLiveBlogPosting    = DescriptorType("LiveBlogPosting")
 
 	AuthorPerson = AuthorType("Person")
 
