@@ -27,6 +27,12 @@ const (
 	ContentFree    = AccesibleForFree("True")
 )
 
+type isDescriptor interface {
+	isDescriptor()
+}
+
+type Multiple []isDescriptor
+
 type DescriptorContext string
 type DescriptorType string
 
@@ -34,6 +40,8 @@ type Descriptor struct {
 	Context DescriptorContext `json:"@context"`
 	Type    DescriptorType    `json:"@type"`
 }
+
+func (d Descriptor) isDescriptor() {}
 
 type AuthorType string
 type ImageType string
@@ -47,6 +55,21 @@ type NewsArticle struct {
 	Headline            string           `json:"headline"`
 	AlternativeHeadline string           `json:"alternativeHeadline"`
 	Image               *Image           `json:"image,omitempty"`
+	DatePublished       string           `json:"datePublished"`
+	DateModified        string           `json:"dateModified,omitempty"`
+	Description         string           `json:"description"`
+	Author              *Author          `json:"author,omitempty"`
+	Publisher           *Publisher       `json:"publisher"`
+	MainEntity          string           `json:"mainEntityOfPage"`
+	AccesibleForFree    AccesibleForFree `json:"isAccesibleForFree,omitempty"`
+	Paywall             *Paywall         `json:"hasPart,omitempty"`
+}
+
+type NewsArticleGallery struct {
+	Descriptor
+	Headline            string           `json:"headline"`
+	AlternativeHeadline string           `json:"alternativeHeadline"`
+	Image               []*Image         `json:"image,omitempty"`
 	DatePublished       string           `json:"datePublished"`
 	DateModified        string           `json:"dateModified,omitempty"`
 	Description         string           `json:"description"`
