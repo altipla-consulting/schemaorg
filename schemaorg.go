@@ -13,7 +13,8 @@ const (
 	TypeOpinionNewsArticle = DescriptorType("OpinionNewsArticle")
 	TypeLiveBlogPosting    = DescriptorType("LiveBlogPosting")
 
-	AuthorPerson = AuthorType("Person")
+	AuthorPerson       = AuthorType("Person")
+	AuthorOrganization = AuthorType("Organization")
 
 	ImageObject = ImageType("ImageObject")
 
@@ -77,6 +78,19 @@ type NewsArticleGallery struct {
 	MainEntity       string           `json:"mainEntityOfPage"`
 	AccesibleForFree AccesibleForFree `json:"isAccesibleForFree,omitempty"`
 	Paywall          *Paywall         `json:"hasPart,omitempty"`
+}
+
+type LiveBlogPosting struct {
+	Descriptor
+	Name          string     `json:"name"`
+	Headline      string     `json:"headline"`
+	DatePublished string     `json:"datePublished"`
+	DateModified  string     `json:"dateModified,omitempty"`
+	Description   string     `json:"description"`
+	Author        *Author    `json:"author,omitempty"`
+	Publisher     *Publisher `json:"publisher"`
+	MainEntity    string     `json:"mainEntityOfPage"`
+	URL           string     `json:"url"`
 }
 
 type Image struct {
