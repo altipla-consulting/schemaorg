@@ -67,17 +67,16 @@ type NewsArticle struct {
 
 type NewsArticleGallery struct {
 	Descriptor
-	Headline            string           `json:"headline"`
-	AlternativeHeadline string           `json:"alternativeHeadline"`
-	Image               []*Image         `json:"image,omitempty"`
-	DatePublished       string           `json:"datePublished"`
-	DateModified        string           `json:"dateModified,omitempty"`
-	Description         string           `json:"description"`
-	Author              *Author          `json:"author,omitempty"`
-	Publisher           *Publisher       `json:"publisher"`
-	MainEntity          string           `json:"mainEntityOfPage"`
-	AccesibleForFree    AccesibleForFree `json:"isAccesibleForFree,omitempty"`
-	Paywall             *Paywall         `json:"hasPart,omitempty"`
+	Headline         string           `json:"headline"`
+	Image            []*Image         `json:"image,omitempty"`
+	DatePublished    string           `json:"datePublished"`
+	DateModified     string           `json:"dateModified,omitempty"`
+	Description      string           `json:"description"`
+	Author           *Author          `json:"author,omitempty"`
+	Publisher        *Publisher       `json:"publisher"`
+	MainEntity       string           `json:"mainEntityOfPage"`
+	AccesibleForFree AccesibleForFree `json:"isAccesibleForFree,omitempty"`
+	Paywall          *Paywall         `json:"hasPart,omitempty"`
 }
 
 type Image struct {
